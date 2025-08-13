@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minicabit - Pre-Book Taxis Online - Cheap Minicab Quotes</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&libraries=places"></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <div class="nav-container">
+          <div class="nav-logo">
+            <a href="index.html">
+              <div class="logo-icon">
+                <i class="fas fa-taxi"></i>
+              </div>
+              <span class="logo-text">minicabit</span>
+            </a>
+          </div>
+
+          <div class="nav-menu" id="nav-menu">
+            <div class="nav-dropdown">
+              <a href="#" class="nav-link dropdown-toggle"
+                >Book a Taxi <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <div class="dropdown-column">
+                  <h4>Major Cities</h4>
+                  <a href="#">London</a>
+                  <a href="#">Edinburgh</a>
+                  <a href="#">Cardiff</a>
+                  <a href="#">Oxford</a>
+                  <a href="#">Reading</a>
+                  <a href="#">Nottingham</a>
+                  <a href="#">Leeds</a>
+                  <a href="#">Bristol</a>
+                  <a href="#">Glasgow</a>
+                  <a href="#">Manchester</a>
+                </div>
+                <div class="dropdown-column">
+                  <h4>More Cities</h4>
+                  <a href="#">Liverpool</a>
+                  <a href="#">York</a>
+                  <a href="#">Southampton</a>
+                  <a href="#">Sheffield</a>
+                  <a href="#">Norwich</a>
+                  <a href="#">Aberdeen</a>
+                  <a href="#">Leicester</a>
+                  <a href="#">Coventry</a>
+                  <a href="#">Newcastle</a>
+                  <a href="#">Birmingham</a>
+                </div>
+                <div class="dropdown-column">
+                  <h4>Additional Cities</h4>
+                  <a href="#">Guildford</a>
+                  <a href="#">Bath</a>
+                  <a href="#">Plymouth</a>
+                  <a href="#">Preston</a>
+                  <a href="#">Cambridge</a>
+                  <a href="#">Lincoln</a>
+                  <a href="#">Hull</a>
+                  <a href="#">Bournemouth</a>
+                  <a href="#">Doncaster</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="nav-dropdown">
+              <a href="#" class="nav-link dropdown-toggle"
+                >Popular destinations <i class="fas fa-chevron-down"></i
+              ></a>
+              <div class="dropdown-content">
+                <div class="dropdown-column">
+                  <h4>Airport Transfers</h4>
+                  <a href="#">Airport transfers</a>
+                  <a href="#">Heathrow Airport Taxi</a>
+                  <a href="#">Gatwick Airport Taxi</a>
+                  <a href="#">Stansted Airport Taxi</a>
+                  <a href="#">Luton Airport Taxi</a>
+                  <a href="#">London City Airport Taxi</a>
+                  <a href="#">Manchester Airport Taxi</a>
+                  <a href="#">Edinburgh Airport Taxi</a>
+                  <a href="#">Glasgow Airport Taxi</a>
+                  <a href="#">Birmingham Airport Taxi</a>
+                  <a href="#">Liverpool Airport Taxi</a>
+                </div>
+                <div class="dropdown-column">
+                  <h4>Train Station Transfers</h4>
+                  <a href="#">Kings Cross Station Taxi</a>
+                  <a href="#">Victoria Station Taxi</a>
+                  <a href="#">Waterloo Station Taxi</a>
+                  <a href="#">Clapham Junction Station Taxi</a>
+                  <a href="#">Charing Cross Station Taxi</a>
+                  <a href="#">Birmingham New Street Station Taxi</a>
+                  <a href="#">Liverpool Lime Street Station Taxi</a>
+                  <a href="#">Liverpool Street Station Taxi</a>
+                  <a href="#">Manchester Piccadilly Station Taxi</a>
+                </div>
+              </div>
+            </div>
+
+            <a href="#" class="nav-link">Business</a>
+            <a href="#" class="nav-link">Operators</a>
+            <a href="#" class="nav-link">Help</a>
+            <a href="#" class="nav-link">About us</a>
+          </div>
+
+          <div class="nav-actions">
+            <button class="btn btn-outline" onclick="openLoginModal()">
+              Login
+            </button>
+            <button class="btn btn-primary" onclick="openSignupModal()">
+              Sign Up
+            </button>
+            <button class="btn btn-admin" onclick="openAdminPanel()">
+              Admin Panel
+            </button>
+          </div>
+
+          <div class="nav-hamburger" id="nav-hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1>Pre-Book Taxis Online - Cheap Minicab Quotes</h1>
+          <p>
+            We check over <strong>1,000 taxi providers</strong> so you don't
+            have to. Trusted by <strong>millions of travellers</strong> across
+            the UK.
+          </p>
+        </div>
+
+        <div class="booking-form-container">
+          <form class="booking-form" id="main-booking-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pickup-location">
+                  <i class="fas fa-circle pickup-icon"></i>
+                  Pickup Location
+                </label>
+                <input
+                  type="text"
+                  id="pickup-location"
+                  placeholder="Enter pickup address"
+                  required
+                />
+                <div class="location-suggestions" id="pickup-suggestions"></div>
+              </div>
+
+              <div class="form-group">
+                <label for="destination">
+                  <i class="fas fa-map-marker-alt destination-icon"></i>
+                  Destination
+                </label>
+                <input
+                  type="text"
+                  id="destination"
+                  placeholder="Enter destination"
+                  required
+                />
+                <div
+                  class="location-suggestions"
+                  id="destination-suggestions"
+                ></div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="pickup-date">Pickup Date</label>
+                <input type="date" id="pickup-date" required />
+              </div>
+
+              <div class="form-group">
+                <label for="pickup-time">Pickup Time</label>
+                <input type="time" id="pickup-time" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="passengers">Passengers</label>
+                <select id="passengers">
+                  <option value="1">1 passenger</option>
+                  <option value="2">2 passengers</option>
+                  <option value="3">3 passengers</option>
+                  <option value="4">4 passengers</option>
+                  <option value="5">5 passengers</option>
+                  <option value="6">6 passengers</option>
+                  <option value="7">7 passengers</option>
+                  <option value="8">8 passengers</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="luggage">Luggage Items</label>
+                <select id="luggage">
+                  <option value="0">No luggage</option>
+                  <option value="1">1 item</option>
+                  <option value="2">2 items</option>
+                  <option value="3">3 items</option>
+                  <option value="4">4 items</option>
+                  <option value="5">5+ items</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group full-width">
+                <label for="trip-type">Trip Type</label>
+                <div class="trip-type-options">
+                  <label class="radio-option">
+                    <input
+                      type="radio"
+                      name="trip-type"
+                      value="one-way"
+                      checked
+                    />
+                    <span>One Way</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="trip-type" value="return" />
+                    <span>Return</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="trip-type" value="airport" />
+                    <span>Airport Transfer</span>
+                  </label>
+                  <label class="radio-option">
+                    <input type="radio" name="trip-type" value="port" />
+                    <span>Port Transfer</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-search">
+              <i class="fas fa-search"></i>
+              Find My Taxi
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="container">
+        <div class="features-grid">
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-times-circle"></i>
+            </div>
+            <h3>Free cancellations</h3>
+            <p>Plans change? Easily cancel for a full refund</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-certificate"></i>
+            </div>
+            <h3>Fully licensed providers</h3>
+            <p>Transparent, fixed price rides with quality drivers</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <h3>Free wait time included</h3>
+            <p>Up to 15 minutes, 45 minutes at airports</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-suitcase"></i>
+            </div>
+            <h3>Luggage items & Multi-stops</h3>
+            <p>Easy to add diverse luggage items & multiple stops</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-calendar-alt"></i>
+            </div>
+            <h3>Book up to 12 months ahead</h3>
+            <p>Best prices for trips booked up to 12 months in advance</p>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon">
+              <i class="fas fa-headset"></i>
+            </div>
+            <h3>24/7 Support</h3>
+            <p>By email, live chat or phone, we're here to help</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <div class="container">
+        <h2>How it works</h2>
+        <p class="section-subtitle">
+          Find and book a <strong>cheap minicab taxi</strong> with our
+          <strong>online taxi comparison service</strong>
+        </p>
+
+        <div class="steps-grid">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <h3>Pick your location and time</h3>
+            <p>
+              Pick a destination and date and we'll search 1,000's of taxi
+              providers to find you the best value.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-icon">
+              <i class="fas fa-car"></i>
+            </div>
+            <h3>Choose your ride</h3>
+            <p>
+              Choose from a range of cars to suit your needs. All licensed, high
+              quality drivers.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-icon">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <h3>Pay securely</h3>
+            <p>
+              Pay for your fixed price ride securely through our website or app.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h3>Ride with confidence</h3>
+            <p>
+              Drivers and their cab providers independently rated by customers
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="statistics">
+      <div class="container">
+        <h2>minicabit in numbers:</h2>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">10+</div>
+            <div class="stat-label">years in business</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">2m+</div>
+            <div class="stat-label">Passengers served</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">1,000+</div>
+            <div class="stat-label">Cab Operators</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">550+</div>
+            <div class="stat-label">UK Towns & Cities serviced</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">99%</div>
+            <div class="stat-label">of UK Stations covered</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">95%</div>
+            <div class="stat-label">of Major UK airports covered</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="vehicle-types">
+      <div class="container">
+        <h2>Get a ride that fits your needs</h2>
+        <p>
+          To book a minicab taxi, simply enter your pickup location and chosen
+          destination in the taxi finder tool and we'll provide you with a list
+          of quotes from minicab taxi companies, allowing you to make your
+          choice based on price, eco-friendliness or car type.
+        </p>
+
+        <h3>Car Types available</h3>
+        <div class="vehicle-grid">
+          <div class="vehicle-card">
+            <div class="vehicle-icon">
+              <i class="fas fa-car"></i>
+            </div>
+            <h4>Saloon/Sedan</h4>
+            <p class="vehicle-example">e.g. Toyota Prius, VW Passat</p>
+            <p class="vehicle-description">For economy travel</p>
+            <div class="vehicle-specs">
+              <span><i class="fas fa-users"></i> 4 passengers</span>
+              <span><i class="fas fa-suitcase"></i> 2 large bags</span>
+              <span><i class="fas fa-briefcase"></i> 2 small bags</span>
+            </div>
+          </div>
+
+          <div class="vehicle-card featured">
+            <div class="vehicle-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h4>Electric Vehicle (EV)</h4>
+            <p class="vehicle-example">e.g. Tesla Model 3, Ioniq 5</p>
+            <p class="vehicle-description">For greener travel</p>
+            <div class="vehicle-specs">
+              <span><i class="fas fa-users"></i> 4 passengers</span>
+              <span><i class="fas fa-suitcase"></i> 2 large bags</span>
+              <span><i class="fas fa-briefcase"></i> 2 small bags</span>
+            </div>
+          </div>
+
+          <div class="vehicle-card">
+            <div class="vehicle-icon">
+              <i class="fas fa-car-side"></i>
+            </div>
+            <h4>Estate</h4>
+            <p class="vehicle-example">e.g. Vauxhall Zafira</p>
+            <p class="vehicle-description">For more luggage space</p>
+            <div class="vehicle-specs">
+              <span><i class="fas fa-users"></i> 4 passengers</span>
+              <span><i class="fas fa-suitcase"></i> 3 large bags</span>
+              <span><i class="fas fa-briefcase"></i> 3 small bags</span>
+            </div>
+          </div>
+
+          <div class="vehicle-card">
+            <div class="vehicle-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h4>MPV/Minivan</h4>
+            <p class="vehicle-example">e.g. VW Sharan, Ford Galaxy</p>
+            <p class="vehicle-description">Ideal for families</p>
+            <div class="vehicle-specs">
+              <span><i class="fas fa-users"></i> 6 passengers</span>
+              <span><i class="fas fa-suitcase"></i> 4 large bags</span>
+              <span><i class="fas fa-briefcase"></i> 4 small bags</span>
+            </div>
+          </div>
+
+          <div class="vehicle-card">
+            <div class="vehicle-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h4>Executive</h4>
+            <p class="vehicle-example">e.g. Merc E class, BMW 5</p>
+            <p class="vehicle-description">For extra comfort</p>
+            <div class="vehicle-specs">
+              <span><i class="fas fa-users"></i> 4 passengers</span>
+              <span><i class="fas fa-suitcase"></i> 2 large bags</span>
+              <span><i class="fas fa-briefcase"></i> 2 small bags</span>
+            </div>
+          </div>
+
+          <div class="vehicle-card">
+            <div class="vehicle-icon">
+              <i class="fas fa-crown"></i>
+            </div>
+            <h4>Luxury</h4>
+            <p class="vehicle-example">e.g. Merc S class, BMW 7</p>
+            <p class="vehicle-description">Travel in style</p>
+            <div class="vehicle-specs">
+              <span><i class="fas fa-users"></i> 4 passengers</span>
+              <span><i class="fas fa-suitcase"></i> 2 large bags</span>
+              <span><i class="fas fa-briefcase"></i> 2 small bags</span>
+            </div>
+          </div>
+
+          <div class="vehicle-card">
+            <div class="vehicle-icon">
+              <i class="fas fa-bus"></i>
+            </div>
+            <h4>8 passengers</h4>
+            <p class="vehicle-example">e.g. Mercedes Viano</p>
+            <p class="vehicle-description">For group Travel</p>
+            <div class="vehicle-specs">
+              <span><i class="fas fa-users"></i> 8 passengers</span>
+              <span><i class="fas fa-suitcase"></i> 4 large bags</span>
+              <span><i class="fas fa-briefcase"></i> 4 small bags</span>
+            </div>
+          </div>
+
+          <div class="vehicle-card">
+            <div class="vehicle-icon">
+              <i class="fas fa-wheelchair"></i>
+            </div>
+            <h4>Wheelchair accessible</h4>
+            <p class="vehicle-example">e.g. Peugeot Premier</p>
+            <p class="vehicle-description">For travelling by Wheelchair</p>
+            <div class="vehicle-specs">
+              <span><i class="fas fa-users"></i> 8 passengers</span>
+              <span><i class="fas fa-suitcase"></i> 4 large bags</span>
+              <span><i class="fas fa-briefcase"></i> 4 small bags</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-download">
+      <div class="container">
+        <div class="app-content">
+          <div class="app-text">
+            <h2>Book on the move with the minicabit app!</h2>
+            <p>
+              Booking a taxi should be easy, quick and simple. In today's
+              digital world, it only makes sense to make it easier to book
+              taxis. Forget carrying cash or looking for taxi numbers, just
+              download the minicabit app to compare taxi fares and book your
+              next ride!
+            </p>
+
+            <ul class="app-features">
+              <li>
+                <i class="fas fa-check"></i> Faster way to compare prices & book
+              </li>
+              <li>
+                <i class="fas fa-check"></i> Pay by Apple Pay and Google Pay
+              </li>
+              <li><i class="fas fa-check"></i> Easily manage your bookings</li>
+            </ul>
+
+            <div class="app-buttons">
+              <a href="#" class="app-store-btn">
+                <img src="app-store.png" alt="Download on App Store" />
+              </a>
+              <a href="#" class="google-play-btn">
+                <img src="google-play.png" alt="Get it on Google Play" />
+              </a>
+            </div>
+          </div>
+
+          <div class="app-image">
+            <img src="app-mockup.png" alt="Minicabit App" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="container">
+        <h2>See what our Minicabit customers think</h2>
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-header">
+              <h4>Jonas</h4>
+              <span class="review-date">1st August</span>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>The driver was one of the best I ever encountered. So good.</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <h4>Dominique</h4>
+              <span class="review-date">1st August</span>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>Best service.</p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <h4>Kate</h4>
+              <span class="review-date">2nd August</span>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>
+              My driver was absolutely incredible and a credit to your
+              organisation
+            </p>
+          </div>
+
+          <div class="review-card">
+            <div class="review-header">
+              <h4>Tibet</h4>
+              <span class="review-date">3rd August</span>
+            </div>
+            <div class="review-rating">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+            <p>
+              The driver we had was absolutely fantastic. We had him both for
+              our outbound and inbound journey and he was very polite, helpful
+              and friendly.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3>How do I book a taxi on minicabit?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Enter your trip information on our website or mobile app - Your
+                pickup and dropoff locations, including any 'via' stops on the
+                way, your pickup date and time, the number of passengers, and
+                any items of luggage. Select a quote from over 1,000 cab
+                providers across the UK and pay securely online.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3>Do I need to call a taxi?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                Use the minicabit website or app to pre-book minicabit taxis!
+                You can book a taxi up to 12 months in advance, or the same day
+                as your trip. Simply add the date and time you will need a taxi
+                and choose the quote that works for you to book a taxi in
+                advance.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3>Is it cheaper to book a taxi in advance?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                At minicabit we do our best to bring you the best taxi fares to
+                get around the UK. To get the best price, we recommend that you
+                book as early as possible. Our Flash Sales are also a great way
+                for you to get a cheaper taxi fare.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question" onclick="toggleFAQ(this)">
+              <h3>Can I cancel my booking at any time?</h3>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+              <p>
+                At minicabit cancelling your booking is quick and easy to do.
+                For a full refund, you must cancel within your cancellation
+                cut-off period, which is indicated in your booking confirmation
+                email.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>Let us help you:</h4>
+            <ul>
+              <li><a href="#">Dial a cab</a></li>
+              <li><a href="#">Taxi Fare Calculator</a></li>
+              <li><a href="#">Student Discount</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Airport Transfers</h4>
+            <ul>
+              <li><a href="#">Airport transfers</a></li>
+              <li><a href="#">Heathrow Airport Taxi</a></li>
+              <li><a href="#">Gatwick Airport Taxi</a></li>
+              <li><a href="#">Stansted Airport Taxi</a></li>
+              <li><a href="#">Luton Airport Taxi</a></li>
+              <li><a href="#">London City Airport Taxi</a></li>
+              <li><a href="#">Manchester Airport Taxi</a></li>
+              <li><a href="#">Edinburgh Airport Taxi</a></li>
+              <li><a href="#">Glasgow Airport Taxi</a></li>
+              <li><a href="#">Birmingham Airport Taxi</a></li>
+              <li><a href="#">Liverpool Airport Taxi</a></li>
+              <li><a href="#">East Midlands Airport Taxi</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Train Station Transfers</h4>
+            <ul>
+              <li><a href="#">Victoria Station Taxi</a></li>
+              <li><a href="#">Paddington Station Taxi</a></li>
+              <li><a href="#">Reading Station Taxi</a></li>
+              <li><a href="#">Birmingham New Street Station Taxi</a></li>
+              <li><a href="#">Manchester Piccadilly Station Taxi</a></li>
+              <li><a href="#">Charing Cross Station Taxi</a></li>
+              <li><a href="#">Kings Cross Station Taxi</a></li>
+              <li><a href="#">Stratford Station Taxi</a></li>
+              <li><a href="#">London Bridge Station Taxi</a></li>
+              <li><a href="#">Euston Station Taxi</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h4>Book a Cab UK wide:</h4>
+            <ul>
+              <li><a href="#">London Taxi</a></li>
+              <li><a href="#">Edinburgh Taxi</a></li>
+              <li><a href="#">Cardiff Taxi</a></li>
+              <li><a href="#">Oxford Taxi</a></li>
+              <li><a href="#">Reading Taxi</a></li>
+              <li><a href="#">Nottingham Taxi</a></li>
+              <li><a href="#">Leeds Taxi</a></li>
+              <li><a href="#">Bristol Taxi</a></li>
+              <li><a href="#">Glasgow Taxi</a></li>
+              <li><a href="#">Manchester Taxi</a></li>
+              <li><a href="#">Birmingham Taxi</a></li>
+              <li><a href="#">Liverpool Taxi</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-support">
+          <h3>We support your bookings 24/7, contactable by</h3>
+          <div class="support-options">
+            <div class="support-item">
+              <i class="fas fa-question-circle"></i>
+              <a href="#" onclick="openFAQ()">View FAQs</a>
+            </div>
+            <div class="support-item">
+              <i class="fas fa-comments"></i>
+              <a href="#" onclick="openLiveChat()">Open Live chat</a>
+            </div>
+            <div class="support-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+441322251351">+44 1322 251 351</a>
+            </div>
+            <div class="support-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:info@minicabit.com">info@minicabit.com</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="footer-links">
+            <a href="#">minicabit Blog</a>
+            <a href="#">Help</a>
+            <a href="#">Site map</a>
+            <a href="#">Contact us</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Privacy policy</a>
+          </div>
+          <p>&copy; 2025 - minicabit.com. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Login</h2>
+          <span class="close" onclick="closeModal('loginModal')">&times;</span>
+        </div>
+        <form class="modal-form" id="loginForm">
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" id="login-email" required />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+          <p class="modal-footer-text">
+            Don't have an account?
+            <a href="#" onclick="switchModal('loginModal', 'signupModal')"
+              >Sign up</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <div id="signupModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Sign Up</h2>
+          <span class="close" onclick="closeModal('signupModal')">&times;</span>
+        </div>
+        <form class="modal-form" id="signupForm">
+          <div class="form-group">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" required />
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" required />
+          </div>
+          <div class="form-group">
+            <label for="signup-phone">Phone Number</label>
+            <input type="tel" id="signup-phone" required />
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" required />
+          </div>
+          <div class="form-group">
+            <label for="signup-confirm-password">Confirm Password</label>
+            <input type="password" id="signup-confirm-password" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+          <p class="modal-footer-text">
+            Already have an account?
+            <a href="#" onclick="switchModal('signupModal', 'loginModal')"
+              >Login</a
+            >
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <div id="resultsModal" class="modal large-modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Available Taxis</h2>
+          <span class="close" onclick="closeModal('resultsModal')"
+            >&times;</span
+          >
+        </div>
+        <div id="search-results" class="search-results"></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

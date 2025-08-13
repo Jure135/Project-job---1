@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minicabit Clone - Feature Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      .demo-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+      .demo-header {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      .demo-header h1 {
+        font-size: 48px;
+        color: #2c5aa0;
+        margin-bottom: 20px;
+      }
+      .demo-header p {
+        font-size: 20px;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+      .features-showcase {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+      }
+      .feature-demo {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+      .feature-demo:hover {
+        transform: translateY(-5px);
+      }
+      .feature-demo h3 {
+        color: #2c5aa0;
+        margin-bottom: 15px;
+        font-size: 24px;
+      }
+      .feature-demo p {
+        color: #666;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+      .demo-btn {
+        background: #27ae60;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .demo-btn:hover {
+        background: #219653;
+        transform: translateY(-2px);
+      }
+      .demo-btn.secondary {
+        background: #2c5aa0;
+      }
+      .demo-btn.secondary:hover {
+        background: #1e3f73;
+      }
+      .screenshot-placeholder {
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+        border: 2px dashed #dee2e6;
+      }
+      .screenshot-placeholder i {
+        font-size: 48px;
+        color: #adb5bd;
+      }
+      .quick-links {
+        background: #f8f9fa;
+        padding: 40px;
+        border-radius: 15px;
+        text-align: center;
+        margin-top: 50px;
+      }
+      .quick-links h2 {
+        color: #2c5aa0;
+        margin-bottom: 30px;
+      }
+      .links-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .quick-link {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #333;
+        transition: all 0.3s;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .quick-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        color: #2c5aa0;
+      }
+      .quick-link i {
+        font-size: 32px;
+        margin-bottom: 15px;
+        color: #27ae60;
+      }
+      .credentials-box {
+        background: #fff3cd;
+        border: 1px solid #ffeaa7;
+        border-radius: 10px;
+        padding: 20px;
+        margin: 30px 0;
+      }
+      .credentials-box h4 {
+        color: #856404;
+        margin-bottom: 15px;
+      }
+      .credentials-box p {
+        margin: 5px 0;
+        color: #856404;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo-container">
+      <div class="demo-header">
+        <h1><i class="fas fa-taxi"></i> Minicabit Clone</h1>
+        <p>
+          Complete taxi booking platform with all the features of the original
+          Minicabit website plus a comprehensive admin dashboard for complete
+          platform management.
+        </p>
+      </div>
+      <div class="credentials-box">
+        <h4><i class="fas fa-key"></i> Demo Credentials</h4>
+        <p><strong>Regular User:</strong> Any email and password</p>
+        <p>
+          <strong>Admin Access:</strong> Use email containing "admin" (e.g.,
+          admin@test.com)
+        </p>
+        <p>
+          <strong>Google Maps:</strong> Replace YOUR_GOOGLE_MAPS_API_KEY with
+          actual API key
+        </p>
+      </div>
+      <div class="features-showcase">
+        <div class="feature-demo">
+          <div class="screenshot-placeholder">
+            <i class="fas fa-home"></i>
+          </div>
+          <h3>Main Website</h3>
+          <p>
+            Complete homepage with booking interface, location picker, vehicle
+            selection, and real-time pricing. Includes user registration,
+            payment integration, and trip history.
+          </p>
+          <a href="index.html" class="demo-btn">View Main Site</a>
+        </div>
+        <div class="feature-demo">
+          <div class="screenshot-placeholder">
+            <i class="fas fa-tachometer-alt"></i>
+          </div>
+          <h3>Admin Dashboard</h3>
+          <p>
+            Comprehensive admin panel for managing users, drivers, bookings,
+            pricing, promotions, and customer support. Includes analytics and
+            live trip tracking.
+          </p>
+          <a href="admin.html" class="demo-btn secondary">View Admin Panel</a>
+        </div>
+        <div class="feature-demo">
+          <div class="screenshot-placeholder">
+            <i class="fas fa-calendar-check"></i>
+          </div>
+          <h3>Advanced Booking System</h3>
+          <p>
+            Supports one-way, return, airport, and port transfers. Multiple
+            vehicle types, passenger/luggage selection, and real-time price
+            calculation with surge pricing.
+          </p>
+          <button class="demo-btn" onclick="showBookingDemo()">
+            Try Booking
+          </button>
+        </div>
+        <div class="feature-demo">
+          <div class="screenshot-placeholder">
+            <i class="fas fa-map-marked-alt"></i>
+          </div>
+          <h3>Live Trip Tracking</h3>
+          <p>
+            Real-time GPS tracking of active trips with Google Maps integration.
+            Both customers and admins can track driver location and trip
+            progress.
+          </p>
+          <button class="demo-btn" onclick="showTrackingDemo()">
+            View Tracking
+          </button>
+        </div>
+        <div class="feature-demo">
+          <div class="screenshot-placeholder">
+            <i class="fas fa-credit-card"></i>
+          </div>
+          <h3>Payment Integration</h3>
+          <p>
+            Multiple payment methods including credit/debit cards, PayPal, Apple
+            Pay, and Google Pay. Secure processing with transaction history.
+          </p>
+          <button class="demo-btn" onclick="showPaymentDemo()">
+            Payment Demo
+          </button>
+        </div>
+        <div class="feature-demo">
+          <div class="screenshot-placeholder">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>User & Driver Management</h3>
+          <p>
+            Complete user registration system with profile management. Driver
+            verification, document management, and status control from admin
+            panel.
+          </p>
+          <button class="demo-btn secondary" onclick="showUserManagement()">
+            User Management
+          </button>
+        </div>
+        <div class="feature-demo">
+          <div class="screenshot-placeholder">
+            <i class="fas fa-percent"></i>
+          </div>
+          <h3>Promotional System</h3>
+          <p>
+            Advanced promo code system with percentage and fixed discounts. Bulk
+            creation, usage tracking, and expiry management.
+          </p>
+          <button class="demo-btn" onclick="showPromoDemo()">
+            Promo Codes
+          </button>
+        </div>
+        <div class="feature-demo">
+          <div class="screenshot-placeholder">
+            <i class="fas fa-headset"></i>
+          </div>
+          <h3>Customer Support</h3>
+          <p>
+            Complete support system with live chat, ticket management, FAQ
+            section, and complaint handling. Admin can manage all support
+            requests.
+          </p>
+          <button class="demo-btn" onclick="showSupportDemo()">
+            Support System
+          </button>
+        </div>
+        <div class="feature-demo">
+          <div class="screenshot-placeholder">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h3>Analytics & Reports</h3>
+          <p>
+            Comprehensive analytics dashboard with revenue tracking, trip
+            statistics, user metrics, and performance indicators. Export
+            functionality included.
+          </p>
+          <button class="demo-btn secondary" onclick="showAnalytics()">
+            View Analytics
+          </button>
+        </div>
+      </div>
+      <div class="quick-links">
+        <h2>Quick Access</h2>
+        <p>Jump directly to different sections of the platform</p>
+
+        <div class="links-grid">
+          <a href="index.html" class="quick-link">
+            <i class="fas fa-home"></i>
+            <h4>Homepage</h4>
+            <p>Main booking interface</p>
+          </a>
+
+          <a href="admin.html" class="quick-link">
+            <i class="fas fa-cogs"></i>
+            <h4>Admin Panel</h4>
+            <p>Platform management</p>
+          </a>
+
+          <a href="#" class="quick-link" onclick="testBookingFlow()">
+            <i class="fas fa-taxi"></i>
+            <h4>Book a Ride</h4>
+            <p>Test booking process</p>
+          </a>
+
+          <a href="#" class="quick-link" onclick="showFeatures()">
+            <i class="fas fa-list-check"></i>
+            <h4>All Features</h4>
+            <p>Complete feature list</p>
+          </a>
+
+          <a href="#" class="quick-link" onclick="showDocumentation()">
+            <i class="fas fa-book"></i>
+            <h4>Documentation</h4>
+            <p>Setup instructions</p>
+          </a>
+
+          <a href="#" class="quick-link" onclick="showCredentials()">
+            <i class="fas fa-key"></i>
+            <h4>Test Accounts</h4>
+            <p>Demo credentials</p>
+          </a>
+        </div>
+      </div>
+      <div class="feature-list" style="margin-top: 50px">
+        <h2 style="text-align: center; color: #2c5aa0; margin-bottom: 30px">
+          Complete Feature List
+        </h2>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+          "
+        >
+          <div>
+            <h3 style="color: #27ae60; margin-bottom: 15px">
+              🌐 Frontend Features
+            </h3>
+            <ul style="color: #666; line-height: 1.8">
+              <li>Responsive homepage design</li>
+              <li>Advanced booking interface</li>
+              <li>Location autocomplete</li>
+              <li>Vehicle type selection</li>
+              <li>Real-time price estimation</li>
+              <li>User registration/login</li>
+              <li>Payment integration</li>
+              <li>Trip history</li>
+              <li>Rating system</li>
+              <li>Support system</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="color: #27ae60; margin-bottom: 15px">
+              ⚙️ Admin Features
+            </h3>
+            <ul style="color: #666; line-height: 1.8">
+              <li>Complete admin dashboard</li>
+              <li>User management</li>
+              <li>Driver verification</li>
+              <li>Live trip tracking</li>
+              <li>Pricing management</li>
+              <li>Promo code system</li>
+              <li>Analytics & reports</li>
+              <li>Support ticket management</li>
+              <li>Bulk operations</li>
+              <li>Export functionality</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 style="color: #27ae60; margin-bottom: 15px">
+              🔧 Technical Features
+            </h3>
+            <ul style="color: #666; line-height: 1.8">
+              <li>Google Maps integration</li>
+              <li>Chart.js analytics</li>
+              <li>Responsive design</li>
+              <li>Mobile-friendly</li>
+              <li>SEO optimized</li>
+              <li>Fast loading</li>
+              <li>Security features</li>
+              <li>API-ready structure</li>
+              <li>PWA ready</li>
+              <li>Cross-browser support</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showBookingDemo() {
+        window.location.href = "index.html#booking-form";
+      }
+
+      function showTrackingDemo() {
+        alert(
+          "Live tracking demo: Login as admin and go to the Tracking section to see active trips on the map."
+        );
+      }
+
+      function showPaymentDemo() {
+        alert(
+          "Payment demo: Complete a booking to see payment options including Credit/Debit, PayPal, Apple Pay, and Google Pay."
+        );
+      }
+
+      function showUserManagement() {
+        window.location.href = "admin.html#users-section";
+      }
+
+      function showPromoDemo() {
+        alert(
+          "Promo demo: Use codes like WELCOME10, SAVE5, FIRST50, or AIRPORT25 during booking. Admin can create new codes."
+        );
+      }
+
+      function showSupportDemo() {
+        alert(
+          "Support demo: Access via the Help section on main site or Support section in admin panel."
+        );
+      }
+
+      function showAnalytics() {
+        window.location.href = "admin.html#dashboard-section";
+      }
+
+      function testBookingFlow() {
+        window.location.href = "index.html";
+      }
+
+      function showFeatures() {
+        document
+          .querySelector(".feature-list")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+
+      function showDocumentation() {
+        alert(
+          "Documentation: Check README.md file for complete setup instructions and feature details."
+        );
+      }
+
+      function showCredentials() {
+        alert(
+          "Test Credentials:\n\n" +
+            "Regular User: Any email/password\n" +
+            'Admin Access: Email containing "admin"\n' +
+            "Example: admin@test.com / any password\n\n" +
+            "Note: Replace Google Maps API key for full functionality"
+        );
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        const featureDemos = document.querySelectorAll(".feature-demo");
+        featureDemos.forEach((demo, index) => {
+          demo.style.opacity = "0";
+          demo.style.transform = "translateY(30px)";
+
+          setTimeout(() => {
+            demo.style.transition = "all 0.6s ease-out";
+            demo.style.opacity = "1";
+            demo.style.transform = "translateY(0)";
+          }, index * 100);
+        });
+      });
+    </script>
+  </body>
+</html>
